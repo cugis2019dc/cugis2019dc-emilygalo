@@ -73,11 +73,12 @@ print("Hello! Welcome to the cubic root calculator.")
 cubicroot = input("Enter the value for the cubic root.")
 
 def value (a):
-    print("The cubic root of", a,"is",math.pow(a,(1/3)))
+    print("The cubic root of", a,"is", math.pow(a,(1/3)))
 
 value(a)
 
 ageint = int(age)
+
 
 
 
