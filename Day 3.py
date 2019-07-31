@@ -43,20 +43,45 @@ studentlist
 import pandas
 dir(pandas)
 
-studentdf = pandas.DataFrame(studentlist)
+studentdf = pandas.DataFrame(studentlist, columns=("Name","Age","Gender"))
 studentdf
 
-chocolates = [["Milk", 5], ["Dark", 6], ["White"]]
+chocolates = [["Milk", 5], ["Dark", 6], ["White", 8],]
+chocodf = pandas.DataFrame(chocolates, columns=("Chocolate", "Quantity"))
+print(chocodf)
+
+import plotly
+dir(plotly)
+from plotly.offline import plot
+import plotly.graph_objs as go
+
+chocobar = go.Bar(x=chocodf["Chocolate"],y=chocodf["Quantity"])
+plot([chocobar])
+
+titles = go.Layout(title = "Number of Chocolates by Type")
+
+chocobar=go.Bar(x=chocodf["Chocolate"],y=chocodf["Quantity"])
+
+fig = go.Figure(data=[chocobar], layout=titles)
+plot(fig)
 
 
 
+students = [["Steve", 32],["Lia", 28],["Vin", 45],["Katie", 38]]
+studentdf = pandas.DataFrame(students, columns=("Name", "Age"))
+print(studentdf)
 
 
+studentdf2 = pandas.DataFrame(studentlist,columns=("Name","Age","Gender"),index=["1","2","3","4"])
+studentdf2
 
+import plotly
+dir(plotly)
+from plotly.offline import plot
+import plotly.graph_objs as go
 
-
-
-
+studentbar = go.Bar(x=studentdf["Name"],y=studentdf["Age"])
+plot([studentbar])
 
 
 
